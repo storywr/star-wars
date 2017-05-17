@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { bindActionCreators } from 'redux'
+import {connect} from 'react-redux'
+import { Link } from 'react-router';
+import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount() {
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#"><Link to="/">Star Wars</Link></a>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Nav>
+            <NavItem eventKey={1} href="#"><Link to="/characters">Character List</Link></NavItem>
+            <NavItem eventKey={2} href="#"><Link to="/characters/new">Add Character</Link></NavItem>
+          </Nav>
+        </Navbar>
+        { this.props.children }
       </div>
     );
   }
