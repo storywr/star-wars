@@ -7,9 +7,15 @@
   -webkit-perspective:800;
   -webkit-perspective-origin:center 300px;
   font-size: 175%;
+  font: "News Cycle", sans-serif;
+  letter-spacing:.15em;
+	color: #ff6;
+	overflow: hidden;
 }
 
 .filmHeader {
+  font: "News Cycle", sans-serif !important;
+  color: #ff6 !important;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0) !important;
 }
