@@ -5,6 +5,7 @@ import {createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import reducers from './reducers'
 import { Router, Route, browserHistory } from 'react-router';
+import CharacterList from './components/CharacterList';
 import App from './App'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -22,6 +23,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
       <Route path="/" component={App} >
+        <Route path="/characters" component={CharacterList} />
       </Route>
     </Router>
   </Provider>,
