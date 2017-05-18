@@ -1,7 +1,7 @@
 .filmContainer {
   color: yellow;
-  height:600px;
   width:1000px;
+  padding: 1%;
   overflow:hidden;
   margin: 0 auto;
   -webkit-perspective:800;
@@ -11,6 +11,7 @@
   letter-spacing:.15em;
 	color: #ff6;
 	overflow: hidden;
+  background: black !important;
 }
 
 .filmHeader {
@@ -18,4 +19,7 @@
   color: #ff6 !important;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0) !important;
+  background: black !important;
+  margin-bottom: 0 !important;
+  padding: 1%;
 }
