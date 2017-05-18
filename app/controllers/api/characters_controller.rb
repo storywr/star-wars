@@ -13,6 +13,10 @@ class Api::CharactersController < ApplicationController
       character_array.push(HTTParty.get("http://swapi.co/api/people/?format=json&page=#{i}"))
       i += 1
     end
+    character_array = character_array.map(&:values).flatten
+    character_array.delete_if {|x| x.is_a? String}
+    character_array.delete_if {|x| x.is_a? Integer}
+    character_array.delete_if {|x| x.nil?}
     render json: character_array
   end
 

@@ -9,14 +9,12 @@ class CharacterList extends Component {
 
     return (
       <div>
-        <PageHeader className="header2">Characters <small>May the Force be with you</small></PageHeader>
+        <PageHeader className="header">Characters <small>May the force be with you</small></PageHeader>
         <div className="dataContainter">
           <div className="adpdata">
             <tr>
-              <ul>{this.props.characters.map(page =>
-                <ul>{page.results.map(character =>
+              <ul>{this.props.characters.map(character =>
                 <Link to={`/character/${character.name}`}><li>{character.name}</li></Link>
-              )}</ul>
             )}</ul>
             </tr>
           </div>

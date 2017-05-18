@@ -18,9 +18,15 @@
     background-size: cover;
 }
 
+.header {
+  padding-left: 2%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0) !important;
+}
+
 .navbar {
   background: rgba(0, 0, 0, 0.0) !important;
   border:3px solid rgba(0, 0, 0, 0.0) !important;
+  font-size: 120%;
 }
 
 .App-logo {
