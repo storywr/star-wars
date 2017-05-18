@@ -3,11 +3,15 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
+import { fetchCharacters } from  './actions/characters.js'
 import './App.css';
 
 class App extends Component {
 
   componentDidMount() {
+    if (this.props.characters.length === 0) {
+      this.props.actions.fetchCharacters()
+    }
   }
 
   render() {
@@ -21,7 +25,6 @@ class App extends Component {
           </Navbar.Header>
           <Nav>
             <NavItem eventKey={1} href="#"><Link to="/characters">Character List</Link></NavItem>
-            <NavItem eventKey={2} href="#"><Link to="/characters/new">Add Character</Link></NavItem>
           </Nav>
         </Navbar>
         { this.props.children }
@@ -30,4 +33,14 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return {characters: state.characters}
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators({ fetchCharacters }, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
