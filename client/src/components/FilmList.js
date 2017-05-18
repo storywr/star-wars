@@ -8,15 +8,19 @@ class FilmList extends Component {
 
   render() {
 
+    var episodes = this.props.films.sort(function(a, b) {
+      return a.episode_id - b.episode_id
+    })
+
     return (
       <div>
         <PageHeader className="header">Episodes <small>Lucas Films</small></PageHeader>
         <div className="filmListContainer">
           <div className="filmData">
             <tr>
-              <ul>{this.props.films.map(film =>
-                <Link to={`/film/${film.title}`}><li>{film.title}</li></Link>
-            )}</ul>
+              {episodes.map(film =>
+                <Link to={`/film/${film.title}`}><p>Episode {film.episode_id}: {film.title}</p></Link>
+            )}
             </tr>
           </div>
         </div>
