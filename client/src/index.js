@@ -8,6 +8,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import CharacterList from './components/CharacterList';
 import FilmList from './components/FilmList';
 import CharacterShow from './components/CharacterShow';
+import FilmShow from './components/FilmShow';
 import App from './App'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/characters" component={CharacterList} />
         <Route path="/films" component={FilmList} />
         <Route path="/character/:name" component={CharacterShow} />
+        <Route path="/film/:title" component={FilmShow} />
       </Route>
     </Router>
   </Provider>,

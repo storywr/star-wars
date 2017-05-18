@@ -1,0 +1,15 @@
+.filmContainer {
+  color: yellow;
+  height:600px;
+  width:1000px;
+  overflow:hidden;
+  margin: 0 auto;
+  -webkit-perspective:800;
+  -webkit-perspective-origin:center 300px;
+  font-size: 175%;
+}
+
+.filmHeader {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0) !important;
+}

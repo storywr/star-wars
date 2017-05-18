@@ -14,7 +14,7 @@ class FilmList extends Component {
           <div className="adpdata">
             <tr>
               <ul>{this.props.films.map(film =>
-                <Link to={`/character/${film.title}`}><li>{film.title}</li></Link>
+                <Link to={`/film/${film.title}`}><li>{film.title}</li></Link>
             )}</ul>
             </tr>
           </div>
