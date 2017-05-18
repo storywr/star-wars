@@ -11,7 +11,7 @@ class CharacterList extends Component {
       <div>
         <PageHeader className="header">Characters <small>May the force be with you</small></PageHeader>
         <div className="dataContainter">
-          <div className="adpdata">
+          <div className="charList">
             <tr>
               <ul>{this.props.characters.map(character =>
                 <Link to={`/character/${character.name}`}><li>{character.name}</li></Link>

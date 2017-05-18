@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { PageHeader, Carousel } from 'react-bootstrap';
+import '../filmList.css';
 
 class FilmList extends Component {
 
@@ -10,8 +11,8 @@ class FilmList extends Component {
     return (
       <div>
         <PageHeader className="header">Episodes <small>Lucas Films</small></PageHeader>
-        <div className="dataContainter">
-          <div className="adpdata">
+        <div className="filmListContainer">
+          <div className="filmData">
             <tr>
               <ul>{this.props.films.map(film =>
                 <Link to={`/film/${film.title}`}><li>{film.title}</li></Link>

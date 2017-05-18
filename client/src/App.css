@@ -18,6 +18,18 @@
     background-size: cover;
 }
 
+.characterData {
+  padding-left: 2%;
+}
+
+.charList {
+  font-size: 120%;
+  columns: 4;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2%;
+  margin-left: 2%;
+}
+
 .header {
   padding-left: 2%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0) !important;
@@ -27,10 +39,6 @@
   background: rgba(0, 0, 0, 0.0) !important;
   border:3px solid rgba(0, 0, 0, 0.0) !important;
   font-size: 120%;
-}
-
-.dataContainer {
-  margin-left: 2%;
 }
 
 .App-logo {
