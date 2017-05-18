@@ -9,10 +9,15 @@ class CharacterShow extends Component {
 
     return (
       <div>
-        <PageHeader className="header">Characters <small>May the force be with you all</small></PageHeader>
-        <div className="dataContainter">
+        <PageHeader className="header">{this.props.character.name} <small></small></PageHeader>
+        <div className="dataContainer">
           <div className="characterData">
-            <h4>{this.props.character.name}</h4>
+            <p>Birth Year: {this.props.character.birth_year}*</p>
+            <p>Eye Color: {this.props.character.eye_color}</p>
+            <p>Height: {this.props.character.height} cm</p>
+            <p>Mass: {this.props.character.mass} kg</p>
+            <p>Skin Color: {this.props.character.skin_color}</p><br></br>
+            <p>*BBY = Before the Battle of Yavin, ABY = After the Battle of Yavin</p>
           </div>
         </div>
       </div>
