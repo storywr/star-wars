@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import { fetchCharacters } from  './actions/characters.js'
+import { fetchFilms } from  './actions/films.js'
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,9 @@ class App extends Component {
   componentDidMount() {
     if (this.props.characters.length === 0) {
       this.props.actions.fetchCharacters()
+    }
+    if (this.props.characters.length === 0) {
+      this.props.actions.fetchFilms()
     }
   }
 
@@ -25,6 +29,7 @@ class App extends Component {
           </Navbar.Header>
           <Nav>
             <NavItem eventKey={1} href="#"><Link to="/characters">Characters</Link></NavItem>
+            <NavItem eventKey={2} href="#"><Link to="/films">Films</Link></NavItem>
           </Nav>
         </Navbar>
         { this.props.children }
@@ -34,12 +39,12 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {characters: state.characters}
+  return {characters: state.characters, films: state.films}
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchCharacters }, dispatch)
+    actions: bindActionCreators({ fetchCharacters, fetchFilms }, dispatch)
   }
 }
 

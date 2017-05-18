@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import reducers from './reducers'
 import { Router, Route, browserHistory } from 'react-router';
 import CharacterList from './components/CharacterList';
+import FilmList from './components/FilmList';
 import CharacterShow from './components/CharacterShow';
 import App from './App'
 import './index.css';
@@ -25,6 +26,7 @@ ReactDOM.render(
     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
       <Route path="/" component={App} >
         <Route path="/characters" component={CharacterList} />
+        <Route path="/films" component={FilmList} />
         <Route path="/character/:name" component={CharacterShow} />
       </Route>
     </Router>
