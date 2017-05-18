@@ -13,9 +13,11 @@ class CharacterList extends Component {
         <div className="dataContainter">
           <div className="adpdata">
             <tr>
-              <ol>{this.props.characters.map(character =>
+              <ul>{this.props.characters.map(page =>
+                <ul>{page.results.map(character =>
                 <Link to={`/character/${character.name}`}><li>{character.name}</li></Link>
-              )}</ol>
+              )}</ul>
+            )}</ul>
             </tr>
           </div>
         </div>
@@ -26,7 +28,7 @@ class CharacterList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    characters: state.characters.results
+    characters: state.characters
   };
 };
 
