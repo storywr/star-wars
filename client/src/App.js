@@ -30,6 +30,7 @@ class App extends Component {
           <Nav>
             <NavItem eventKey={1} href="#"><Link to="/characters">Characters</Link></NavItem>
             <NavItem eventKey={2} href="#"><Link to="/films">Films</Link></NavItem>
+            <NavItem className="git" eventKey={3} href="https://github.com/storywr/star-wars">Github Repo</NavItem>
           </Nav>
         </Navbar>
         { this.props.children }

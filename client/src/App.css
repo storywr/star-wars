@@ -18,6 +18,10 @@
     background-size: cover;
 }
 
+.git {
+  padding-top: -2%;
+}
+
 .characterData {
   padding-left: 2%;
   font-size: 120%;
