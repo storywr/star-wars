@@ -9,11 +9,11 @@ class CharacterShow extends Component {
 
   constructor(props) {
     super(props);
-    this.props.actions.fetchSpecies({characterid: this.props.character.url.slice(-2,-1)})
+    this.props.actions.fetchSpecies({characterid: this.props.character.species[0].slice(-2,-1)})
     this.state = {
       character: props.character,
     };
-    this.props.actions.fetchSpecies({characterid: this.props.character.url.slice(-2,-1)})
+    this.props.actions.fetchSpecies({characterid: this.props.character.species[0].slice(-2,-1)})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,8 +33,10 @@ class CharacterShow extends Component {
             <p>Eye Color: {this.props.character.eye_color}</p>
             <p>Height: {this.props.character.height} cm</p>
             <p>Mass: {this.props.character.mass} kg</p>
-            <p>Skin Color: {this.props.character.skin_color}</p><br></br>
+            <p>Skin Color: {this.props.character.skin_color}</p>
             <p>Species: {this.props.species.name}</p>
+            <p>Average Lifespan: {this.props.species.average_lifespan}</p>
+            <p>Language: {this.props.species.language}</p><br></br>
             <p>*BBY = Before the Battle of Yavin, ABY = After the Battle of Yavin</p>
           </div>
         </div>
