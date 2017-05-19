@@ -1,5 +1,5 @@
 # STAR WARS Lore
-----------------
+
 This app was built to utilize the SWAPI (Star Wars API) found here: https://swapi.co/.
 
 The character list displays all of the known characters in the Star Wars Universe.
