@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { PageHeader, Carousel } from 'react-bootstrap';
+import { fetchSpecies } from  '../actions/species.js'
 
 class CharacterShow extends Component {
+
+  constructor(props) {
+    super(props);
+    this.props.actions.fetchSpecies({characterid: this.props.character.url.slice(-2,-1)})
+    this.state = {
+      character: props.character,
+    };
+    this.props.actions.fetchSpecies({characterid: this.props.character.url.slice(-2,-1)})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      species: this.props.species,
+    });
+  }
 
   render() {
 
@@ -17,6 +34,7 @@ class CharacterShow extends Component {
             <p>Height: {this.props.character.height} cm</p>
             <p>Mass: {this.props.character.mass} kg</p>
             <p>Skin Color: {this.props.character.skin_color}</p><br></br>
+            <p>Species: {this.props.species.name}</p>
             <p>*BBY = Before the Battle of Yavin, ABY = After the Battle of Yavin</p>
           </div>
         </div>
@@ -27,9 +45,16 @@ class CharacterShow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    character: state.characters.find(character => character.name == ownProps.routeParams.name)
+    character: state.characters.find(character => character.name == ownProps.routeParams.name),
+    species: state.species
   };
 };
 
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreators({ fetchSpecies }, dispatch)
+  }
+}
 
-export default connect(mapStateToProps)(CharacterShow);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterShow);
