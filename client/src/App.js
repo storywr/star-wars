@@ -39,7 +39,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {characters: state.characters, films: state.films, species: state.species}
+  return {characters: state.characters, films: state.films, species: state.species, starships: state.starships}
 }
 
 function mapDispatchToProps(dispatch){

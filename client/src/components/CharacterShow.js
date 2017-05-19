@@ -4,21 +4,25 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { PageHeader, Carousel } from 'react-bootstrap';
 import { fetchSpecies } from  '../actions/species.js'
+import { fetchStarships } from  '../actions/starships.js'
 
 class CharacterShow extends Component {
 
   constructor(props) {
     super(props);
     this.props.actions.fetchSpecies({speciesURL: this.props.character.species[0]})
+    this.props.actions.fetchStarships({starshipsURL: this.props.character.starships[0]})
     this.state = {
       character: props.character,
     };
     this.props.actions.fetchSpecies({speciesURL: this.props.character.species[0]})
+    this.props.actions.fetchStarships({starshipsURL: this.props.character.starships[0]})
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       species: this.props.species,
+      starships: this.props.starships
     });
   }
 
@@ -36,7 +40,8 @@ class CharacterShow extends Component {
             <p>Skin Color: {this.props.character.skin_color}</p>
             <p>Species: {this.props.species.name}</p>
             <p>Average Lifespan: {this.props.species.average_lifespan}</p>
-            <p>Language: {this.props.species.language}</p><br></br>
+            <p>Language: {this.props.species.language}</p>
+            <p>Starship: {this.props.starships.name}</p><br></br>
             <p>*BBY = Before the Battle of Yavin, ABY = After the Battle of Yavin</p>
           </div>
         </div>
@@ -48,13 +53,14 @@ class CharacterShow extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     character: state.characters.find(character => character.name == ownProps.routeParams.name),
-    species: state.species
+    species: state.species,
+    starships: state.starships
   };
 };
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchSpecies }, dispatch)
+    actions: bindActionCreators({ fetchSpecies, fetchStarships }, dispatch)
   }
 }
 
