@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :homeworlds
   resources :starships
   resources :species
   resources :films
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     get '/films/', to: 'films#films'
     post '/species/', to: 'species#species'
     post '/starships/', to: 'starships#starships'
+    post '/homeworlds/', to: 'homeworlds#homeworlds'
     resources :characters, only: [:index]
     resources :films, only: [:index]
   end
