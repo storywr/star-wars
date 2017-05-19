@@ -7,14 +7,14 @@ class Api::SpeciesController < ApplicationController
   end
 
   def species
-    response = HTTParty.get("http://swapi.co/api/species/#{species_params[:characterid]}")
+    response = HTTParty.get("#{species_params[:speciesURL]}")
     render json: response
   end
 
   private
 
   def species_params
-    params.require(:species).permit(:characterid)
+    params.require(:species).permit(:speciesURL)
   end
 
 end

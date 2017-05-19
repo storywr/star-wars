@@ -9,11 +9,11 @@ class CharacterShow extends Component {
 
   constructor(props) {
     super(props);
-    this.props.actions.fetchSpecies({characterid: this.props.character.species[0].slice(-2,-1)})
+    this.props.actions.fetchSpecies({speciesURL: this.props.character.species[0]})
     this.state = {
       character: props.character,
     };
-    this.props.actions.fetchSpecies({characterid: this.props.character.species[0].slice(-2,-1)})
+    this.props.actions.fetchSpecies({speciesURL: this.props.character.species[0]})
   }
 
   componentWillReceiveProps(nextProps) {
