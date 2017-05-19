@@ -46,7 +46,7 @@ class CharacterShow extends Component {
             <p>Species: {this.props.species.name}</p>
             <p>Average Lifespan: {this.props.species.average_lifespan}</p>
             <p>Language: {this.props.species.language}</p>
-            <p>Starship: {this.props.starships.name}</p>
+            <p>Starship: {this.state.starships.name}</p>
             <p>Homeworld: {this.props.homeworlds.name}</p><br></br>
             <p>*BBY = Before the Battle of Yavin, ABY = After the Battle of Yavin</p>
           </div>
