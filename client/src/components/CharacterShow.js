@@ -16,6 +16,7 @@ class CharacterShow extends Component {
     this.props.actions.fetchHomeworlds({homeworldsURL: this.props.character.homeworld})
     this.state = {
       character: props.character,
+      starships: ""
     };
     this.props.actions.fetchSpecies({speciesURL: this.props.character.species[0]})
     this.props.actions.fetchStarships({starshipsURL: this.props.character.starships[0]})
