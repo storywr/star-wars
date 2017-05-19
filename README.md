@@ -1,24 +1,7 @@
-# README
+# STAR WARS Lore
+----------------
+This app was built to utilize the SWAPI (Star Wars API) found here: https://swapi.co/.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The character list displays all of the known characters in the Star Wars Universe.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can click on each character to take you to their character show page. Here all of the character's attributes will be called from the API.
